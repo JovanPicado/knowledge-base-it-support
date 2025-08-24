@@ -1,0 +1,23 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Incidencia {
+  id            Int       @id @default(autoincrement())
+  titulo        String
+  descripcion   String     // resumen corto del problema
+  solucionMd    String     // markdown con la solución detallada
+  tags          String     @default("") // etiquetas como texto separado por comas
+  categoria     String     @default("General")
+  criticidad    String     @default("Media") // Baja | Media | Alta | Crítica
+  estado        String     @default("Abierta") // Abierta | En progreso | Resuelta | Cerrada
+  creadoEn      DateTime   @default(now())
+  actualizadoEn DateTime   @updatedAt
+}
