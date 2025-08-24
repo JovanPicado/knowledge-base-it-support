@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 📚 Knowledge Base IT Support
 
-First, run the development server:
+Un **Web App moderno** para documentar, buscar y gestionar soluciones técnicas de IT Support.  
+Este proyecto forma parte de mi portafolio profesional como especialista en **Soporte Técnico** e **IT Help Desk**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Características principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✅ Registro de incidencias con campos como título, descripción, criticidad, estado y solución.  
+✅ Editor con soporte **Markdown** para documentar soluciones técnicas de forma clara.  
+✅ Filtros avanzados por criticidad, estado o búsqueda por palabra clave.  
+✅ Listado de incidencias con etiquetas (#tags) para fácil categorización.  
+✅ Vista de detalle con solución formateada en Markdown.  
+✅ Exportación de cada incidencia a **versión imprimible** y **descarga en PDF** con Puppeteer.  
+✅ UI futurista y minimalista, construida con **shadcn/ui**, **TailwindCSS** y **Framer Motion**.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tecnologías utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 14 (App Router)  
+- TypeScript  
+- Prisma ORM + SQLite (para persistencia de datos en desarrollo)  
+- TailwindCSS + shadcn/ui (componentes modernos y estilos)  
+- React Hook Form + Zod (validaciones en formularios)  
+- React Markdown + Remark GFM (soporte de Markdown enriquecido)  
+- Puppeteer (generación de PDFs)  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Estructura del proyecto
 
-## Deploy on Vercel
+knowledge-base-app/  
+ ├── app/                  → Rutas principales de Next.js  
+ │   ├── api/              → Endpoints (CRUD + PDF)  
+ │   ├── incidencias/      → Páginas de incidencias (listado, detalle, nueva)  
+ │   └── layout.tsx        → Layout base con navbar  
+ ├── components/           → Componentes personalizados (ej. Filters)  
+ ├── components/ui/        → Componentes de shadcn/ui  
+ ├── lib/                  → Cliente de Prisma (db.ts)  
+ ├── prisma/               → Esquema de base de datos  
+ ├── public/               → Recursos estáticos  
+ └── README.md  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Instalación y uso
+
+1. Clona este repositorio:
+   git clone https://github.com/JovanPicado/knowledge-base-it-support.git
+   cd knowledge-base-it-support
+
+2. Instala dependencias:
+   npm install
+
+3. Configura el entorno:
+   - Crea un archivo `.env` en la raíz con:
+     DATABASE_URL="file:./prisma/dev.db"
+
+4. Ejecuta migraciones de Prisma:
+   npx prisma migrate dev --name init
+
+5. Inicia el servidor:
+   npm run dev
+
+6. Abre en tu navegador:
+   http://localhost:3000
+
+---
+
+## 🧪 Próximos pasos / Mejoras
+
+- [ ] Autenticación de usuarios (para separar incidencias por persona).  
+- [ ] Soporte de base de datos PostgreSQL en producción.  
+- [ ] Dashboard con métricas de incidencias por categoría/criticidad.  
+- [ ] Internacionalización (i18n) para inglés/español.  
+
+---
+
+## 👨‍💻 Autor
+
+**Jovan Picado**  
+- 💼 LinkedIn: https://www.linkedin.com/in/tu-perfil  
+- 🐙 GitHub: https://github.com/JovanPicado  
+
+---
+
+> ⚡ Este proyecto es parte de mi portafolio como IT Support Engineer, mostrando mis habilidades en documentación de incidencias, desarrollo de herramientas internas y buenas prácticas en soporte técnico.
+'@ | Out-File -Encoding UTF8 README.md; git add README.md; git commit -m "📝 Mejorado README con detalles del proyecto"; git push
+
